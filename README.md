@@ -15,7 +15,7 @@ Online demo see [http://git.hust.cc/gantt-for-react/](http://git.hust.cc/gantt-f
 
 # 2. usage
 
-Simple demo code. for more example can see: [http://git.hust.cc/gantt-for-react/](http://git.hust.cc/gantt-for-react/)
+Simple demo code. for more example can see: [http://git.hust.cc/gantt-for-react/](http://git.hust.cc/gantt-for-react/).
 
 ```js
 import React from 'react';
@@ -23,7 +23,8 @@ import ReactGantt from 'gantt-for-react';
 
 <ReactGantt 
 	tasks={this.getTasks()} 
-	viewMode={this.state.viewMode} />
+	viewMode={this.state.viewMode}
+
     onClick={this._func} 
 	onDateChange={this._func}
 	onProgressChange={this._func}
@@ -41,7 +42,7 @@ The tasks array need to be show with gantt graph.
 
 The view mode of gantt. Can be **Quarter Day, Half Day, Day, Week, Month**. 
 
-And 4 event function props: `onClick`, `onDateChange`, `onProgressChange`, `onViewChange`. Document can see [here](https://frappe.github.io/gantt/).
+And** 4 event function props**: `onClick`, `onDateChange`, `onProgressChange`, `onViewChange`. Document can see [here](https://frappe.github.io/gantt/).
 
 
 # 4. LICENSE
