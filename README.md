@@ -10,12 +10,10 @@
 npm install gantt-for-react
 ```
 
-Online demo see [http://git.hust.cc/gantt-for-react/](http://git.hust.cc/gantt-for-react/).
-
 
 # 2. usage
 
-Simple demo code. for more example can see: [http://git.hust.cc/gantt-for-react/](http://git.hust.cc/gantt-for-react/).
+Online demo see [http://git.hust.cc/gantt-for-react/](http://git.hust.cc/gantt-for-react/).
 
 ```js
 import React from 'react';
@@ -31,6 +29,7 @@ import ReactGantt from 'gantt-for-react';
 	onViewChange={this._func} />
 ```
 
+Or you can see the code [here](https://github.com/hustcc/gantt-for-react/blob/master/demo/GanttComponent.jsx#L51).
 
 # 3. component props
 
