@@ -26,7 +26,8 @@ import ReactGantt from 'gantt-for-react';
     onClick={this._func} 
 	onDateChange={this._func}
 	onProgressChange={this._func}
-	onViewChange={this._func} />
+	onViewChange={this._func} 
+	customPopupHtml={this._html_func} />
 ```
 
 Or you can see the code [here](https://github.com/hustcc/gantt-for-react/blob/master/demo/GanttComponent.jsx#L51).
@@ -40,6 +41,10 @@ The tasks array need to be show with gantt graph.
  - **`viewMode`** (required, string)
 
 The view mode of gantt. Can be **Quarter Day, Half Day, Day, Week, Month**. 
+
+ - **`customPopupHtml`** (optional, func)
+
+The popo html function, can be a function that returns html or a simple html string.
 
 And** 4 event function props**: `onClick`, `onDateChange`, `onProgressChange`, `onViewChange`. Document can see [here](https://frappe.github.io/gantt/).
 

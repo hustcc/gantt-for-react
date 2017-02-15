@@ -2,7 +2,7 @@ import React from 'react';
 import ReactGantt from '..';
 
 const GanttComponent = React.createClass({
-  getTasks: function() {
+  tasks: function() {
     let names = [
       ["Redesign website", [0, 7]],
       ["Write new content", [1, 4]],
@@ -31,16 +31,30 @@ const GanttComponent = React.createClass({
     tasks[3].dependencies = "Task 2"
     tasks[5].dependencies = "Task 4"
     return tasks;
-  },
+  }(),
   getInitialState: function() {
     return {
-      viewMode: 'Month'
+      viewMode: 'Month',
+      tasks: this.tasks
     };
   },
   componentDidMount: function() {
-    setTimeout(function() {
-      this.setState({viewMode: 'Week'});
-    }.bind(this), 2000)
+    setInterval(function() {
+      this.setState({
+        viewMode: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'][parseInt(Math.random() * 3 + 1)],
+        tasks: this.tasks.slice(0, parseInt(Math.random() * 4 + 1))
+      });
+    }.bind(this), 5000)
+  },
+  customPopupHtml: function(task) {
+    const end_date = task._end.format('MMM D');
+    return `
+      <div class="details-container">
+        <h5>${task.name}</h5>
+        <p>Expected to finish by ${end_date}</p>
+        <p>${task.progress}% completed!</p>
+      </div>
+    `;
   },
   render: function() {
     return (
@@ -48,7 +62,9 @@ const GanttComponent = React.createClass({
         <div className='parent'>
           <label> render ReactGantt Component </label>
           <div style={{overflow: 'scroll'}}>
-            <ReactGantt tasks={this.getTasks()} viewMode={this.state.viewMode} />
+            <ReactGantt tasks={this.state.tasks} 
+                        viewMode={this.state.viewMode} 
+                        customPopupHtml={this.customPopupHtml} />
           </div>
         </div>
       </div>
