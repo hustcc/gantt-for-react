@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/hustcc/gantt-for-react.svg?branch=master)](https://travis-ci.org/hustcc/gantt-for-react) [![npm](https://img.shields.io/npm/v/gantt-for-react.svg?style=flat-square)](https://www.npmjs.com/package/gantt-for-react) [![npm](https://img.shields.io/npm/dt/gantt-for-react.svg?style=flat-square)](https://www.npmjs.com/package/gantt-for-react) [![npm](https://img.shields.io/npm/l/gantt-for-react.svg?style=flat-square)](https://www.npmjs.com/package/gantt-for-react)
 
+
 # 1. install
 
 ```sh
@@ -49,6 +50,11 @@ The popo html function, can be a function that returns html or a simple html str
 And** 4 event function props**: `onClick`, `onDateChange`, `onProgressChange`, `onViewChange`. Document can see [here](https://frappe.github.io/gantt/).
 
 
-# 4. LICENSE
+# 4. screenshot
+
+![screenshot](demo/screenshot.png)
+
+
+# 5. LICENSE
 
 MIT @[hustcc](https://github.com/hustcc)
