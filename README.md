@@ -37,7 +37,7 @@ Or you can see the code [here](https://github.com/hustcc/gantt-for-react/blob/ma
 
  - **`tasks`** (required, array)
 
-The tasks array need to be show with gantt graph.
+The tasks array need to be show with gantt graph. task is an object with format: **{ id, name, start, end, progress, dependencies, custom_class }**.
 
  - **`viewMode`** (required, string)
 

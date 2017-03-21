@@ -1,6 +1,6 @@
 {
   "name": "gantt-for-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Frappe Gantt components for React wrapper.",
   "main": "lib/gantt-for-react.js",
   "scripts": {
@@ -64,7 +64,7 @@
     "babel-plugin-transform-es3-member-expression-literals": "*"
   },
   "dependencies": {
-    "frappe-gantt": "^0.0.4"
+    "frappe-gantt": "^0.0.5"
   },
   "peerDependencies": {
     "react": ">=0.13.2 || ^0.14 || ^15.0.0"

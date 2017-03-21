@@ -26,10 +26,13 @@ const GanttComponent = React.createClass({
         progress: parseInt(Math.random() * 100, 10)
       }
     });
-    tasks[1].dependencies = "Task 0"
-    tasks[2].dependencies = "Task 1, Task 0"
-    tasks[3].dependencies = "Task 2"
-    tasks[5].dependencies = "Task 4"
+    tasks[1].dependencies = "Task 0";
+    tasks[2].dependencies = "Task 1, Task 0";
+    tasks[3].dependencies = "Task 2";
+    tasks[5].dependencies = "Task 4";
+
+    tasks[0].custom_class = "bar-milestone";
+    tasks[0].progress = 60;
     return tasks;
   }(),
   getInitialState: function() {
