@@ -1,5 +1,4 @@
 import React from 'react';
-import FrappeGantt from 'frappe-gantt';
 import GanttJS from 'ganttjs';
 
 const ReactGantt = React.createClass({
@@ -38,8 +37,8 @@ const ReactGantt = React.createClass({
       if (this.props.viewMode !== nextProps.viewMode) {
         this.gantt.change_view_mode(nextProps.viewMode);
         if (nextProps.scrollOffsets && nextProps.scrollOffsets.hasOwnProperty(nextProps.viewMode)){
-          this.gantt.change_scroll_offset(nextProps.viewMode, nextProps.scrollOffsets[nextProps.viewMode]);
-        }
+            this.gantt.change_scroll_offset(nextProps.viewMode, nextProps.scrollOffsets[nextProps.viewMode]);
+          }
       }
     }
   },
