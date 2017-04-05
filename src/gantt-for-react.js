@@ -1,5 +1,6 @@
 import React from 'react';
 import FrappeGantt from 'frappe-gantt';
+import GanttJS from 'ganttjs';
 
 const ReactGantt = React.createClass({
   propTypes: {
@@ -29,12 +30,15 @@ const ReactGantt = React.createClass({
     this.renderFrappeGanttDOM();
   },
 
-  // redraw the gantt when update. now just change the viewMode.
+  // redraw the gantt when update. now change the viewMode and scroll_offset
   componentWillReceiveProps(nextProps) {
     if (this.gantt) {
       this.gantt.refresh(nextProps.tasks);
       // 不相等才刷新
-      if (this.props.viewMode !== nextProps.viewMode) this.gantt.change_view_mode(nextProps.viewMode);
+      if (this.props.viewMode !== nextProps.viewMode) {
+        this.gantt.change_view_mode(nextProps.viewMode);
+        this.gantt.change_scroll_offset(nextProps.viewMode, nextProps.scrollOffsets[nextProps.viewMode]);
+      }
     }
   },
 
@@ -43,7 +47,7 @@ const ReactGantt = React.createClass({
     // init the gantt
     // if exist, return
     if (this.gantt) return;
-    this.gantt = new FrappeGantt('#' + this.ganttId, this.props.tasks, {
+    this.gantt = new GanttJS('#' + this.ganttId, this.props.tasks, {
       on_click: this.props.onClick || this.emptyFunc,
       on_date_change: this.props.onDateChange || this.emptyFunc,
       on_progress_change: this.props.onProgressChange || this.emptyFunc,
@@ -52,6 +56,8 @@ const ReactGantt = React.createClass({
     });
     // change view mode
     this.gantt.change_view_mode(this.props.viewMode);
+    this.gantt.change_scroll_offset(this.props.viewMode, this.props.scrollOffsets[this.props.viewMode]);
+    
     // return the object
     return this.gantt;
   },

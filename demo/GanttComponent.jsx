@@ -37,14 +37,21 @@ const GanttComponent = React.createClass({
   }(),
   getInitialState: function() {
     return {
-      viewMode: 'Month',
-      tasks: this.tasks
+      viewMode: 'Day',
+      tasks: this.tasks,
+      scrollOffsets:{
+        'Quarter Day': 10,
+        'Half Day': 4,
+        'Day': 10,
+        'Week': 2,
+        'Month': 1
+      }
     };
   },
   componentDidMount: function() {
     setInterval(function() {
       this.setState({
-        viewMode: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'][parseInt(Math.random() * 3 + 1)],
+        viewMode: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'][parseInt(Math.random() * 5 + 1) - 1],
         tasks: this.tasks.slice(0, parseInt(Math.random() * 4 + 1))
       });
     }.bind(this), 5000)
@@ -67,7 +74,9 @@ const GanttComponent = React.createClass({
           <div style={{overflow: 'scroll'}}>
             <ReactGantt tasks={this.state.tasks} 
                         viewMode={this.state.viewMode} 
-                        customPopupHtml={this.customPopupHtml} />
+                        customPopupHtml={this.customPopupHtml} 
+                        scrollOffsets={this.state.scrollOffsets}
+                        />
           </div>
         </div>
       </div>

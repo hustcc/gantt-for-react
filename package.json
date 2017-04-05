@@ -4,7 +4,7 @@
   "description": "Frappe Gantt components for React wrapper.",
   "main": "lib/gantt-for-react.js",
   "scripts": {
-    "start": "webpack-dev-server --watch",
+    "start": "webpack --watch",
     "lint": "eslint src",
     "clean": "rimraf lib",
     "test": "npm run lint",
@@ -64,7 +64,7 @@
     "babel-plugin-transform-es3-member-expression-literals": "*"
   },
   "dependencies": {
-    "frappe-gantt": "^0.0.5"
+    "ganttjs": "^0.0.1"
   },
   "peerDependencies": {
     "react": ">=0.13.2 || ^0.14 || ^15.0.0"
