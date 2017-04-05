@@ -1,6 +1,6 @@
 {
   "name": "gantt-for-react",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Frappe Gantt components for React wrapper.",
   "main": "lib/gantt-for-react.js",
   "scripts": {
