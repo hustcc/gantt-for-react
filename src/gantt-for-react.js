@@ -37,7 +37,9 @@ const ReactGantt = React.createClass({
       // 不相等才刷新
       if (this.props.viewMode !== nextProps.viewMode) {
         this.gantt.change_view_mode(nextProps.viewMode);
-        this.gantt.change_scroll_offset(nextProps.viewMode, nextProps.scrollOffsets[nextProps.viewMode]);
+        if (nextProps.scrollOffsets && nextProps.scrollOffsets.hasOwnProperty(nextProps.viewMode)){
+          this.gantt.change_scroll_offset(nextProps.viewMode, nextProps.scrollOffsets[nextProps.viewMode]);
+        }
       }
     }
   },
@@ -56,8 +58,10 @@ const ReactGantt = React.createClass({
     });
     // change view mode
     this.gantt.change_view_mode(this.props.viewMode);
-    this.gantt.change_scroll_offset(this.props.viewMode, this.props.scrollOffsets[this.props.viewMode]);
-    
+    // change the scroll offset
+    if(this.props.scrollOffsets && this.props.scrollOffsets.hasOwnProperty(this.props.viewMode)){
+      this.gantt.change_scroll_offset(this.props.viewMode, this.props.scrollOffsets[this.props.viewMode]);
+    }
     // return the object
     return this.gantt;
   },
