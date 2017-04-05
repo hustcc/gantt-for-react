@@ -74,7 +74,8 @@ const GanttComponent = React.createClass({
           <div style={{overflow: 'scroll'}}>
             <ReactGantt tasks={this.state.tasks} 
                         viewMode={this.state.viewMode} 
-                        customPopupHtml={this.customPopupHtml}
+                        customPopupHtml={this.customPopupHtml} 
+                        scrollOffsets={this.state.scrollOffsets}
                         />
           </div>
         </div>
