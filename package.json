@@ -1,7 +1,11 @@
 {
   "name": "gantt-for-react",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Frappe Gantt components for React wrapper.",
+  "files": [
+    "src",
+    "lib"
+  ],
   "main": "lib/gantt-for-react.js",
   "scripts": {
     "start": "webpack --watch",
@@ -61,12 +65,14 @@
     "element-resize-event": "^2.0.5",
     "react-router": "^2.0.0",
     "babel-plugin-transform-es3-property-literals": "*",
-    "babel-plugin-transform-es3-member-expression-literals": "*"
+    "babel-plugin-transform-es3-member-expression-literals": "*",
+    "prop-types": "^15.0.0"
   },
   "dependencies": {
-    "ganttjs": "^0.0.1"
+    "frappe-gantt": "^0.0.6"
   },
   "peerDependencies": {
-    "react": ">=0.13.2 || ^0.14 || ^15.0.0"
+    "react": ">=0.13.2 || ^0.14 || ^15.0.0 || >=16.0.0-alpha.1 <17.0.0",
+    "prop-types": ">=15.0.0"
   }
 }
