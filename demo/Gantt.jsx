@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactGantt from '..';
 
-const GanttComponent = React.createClass({
-  tasks: function() {
+export default class Gantt extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      viewMode: 'Day',
+      tasks: this.getTasks(),
+    };
+  }
+
+  componentDidMount() {
+    window.setInterval(function() {
+      this.setState({
+        viewMode: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'][parseInt(Math.random() * 5 + 1) - 1],
+        tasks: this.getTasks().slice(0, parseInt(Math.random() * 4 + 1))
+      });
+    }.bind(this), 5000)
+  };
+
+  getTasks = () => {
     let names = [
       ["Redesign website", [0, 7]],
       ["Write new content", [1, 4]],
@@ -34,29 +52,9 @@ const GanttComponent = React.createClass({
     tasks[0].custom_class = "bar-milestone";
     tasks[0].progress = 60;
     return tasks;
-  }(),
-  getInitialState: function() {
-    return {
-      viewMode: 'Day',
-      tasks: this.tasks,
-      scrollOffsets:{
-        'Quarter Day': 10,
-        'Half Day': 4,
-        'Day': 10,
-        'Week': 2,
-        'Month': 1
-      }
-    };
-  },
-  componentDidMount: function() {
-    setInterval(function() {
-      this.setState({
-        viewMode: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'][parseInt(Math.random() * 5 + 1) - 1],
-        tasks: this.tasks.slice(0, parseInt(Math.random() * 4 + 1))
-      });
-    }.bind(this), 5000)
-  },
-  customPopupHtml: function(task) {
+  };
+
+  customPopupHtml = task => {
     const end_date = task._end.format('MMM D');
     return `
       <div class="details-container">
@@ -65,23 +63,22 @@ const GanttComponent = React.createClass({
         <p>${task.progress}% completed!</p>
       </div>
     `;
-  },
-  render: function() {
+  };
+
+  render() {
     return (
       <div className='examples'>
         <div className='parent'>
           <label> render ReactGantt Component </label>
           <div style={{overflow: 'scroll'}}>
-            <ReactGantt tasks={this.state.tasks} 
-                        viewMode={this.state.viewMode} 
-                        customPopupHtml={this.customPopupHtml} 
+            <ReactGantt tasks={this.state.tasks}
+                        viewMode={this.state.viewMode}
+                        customPopupHtml={this.customPopupHtml}
                         scrollOffsets={this.state.scrollOffsets}
-                        />
+            />
           </div>
         </div>
       </div>
     );
   }
-});
-
-export default GanttComponent;
+}

@@ -1,27 +1,38 @@
+var path = require('path');
 var webpack = require('webpack');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var definePlugin = webpack.DefinePlugin;
 
 module.exports = {
-  entry: './demo/demo.jsx',
+  entry: './demo/index.jsx',
   output: {
-    path: './demo/dist/', filename: 'bundle.js'
+    path: path.resolve(__dirname, './demo/dist'),
+    filename: 'bundle.js'
   },
   module: {
     loaders:[{
       test: /\.js[x]?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader?presets[]=es2015&presets[]=react'
-    }, { 
-      test: /\.css$/, 
-      loader: 'style-loader!css-loader' 
-    }, { 
-      test: /\.(png|jpg)$/, 
-      loader: 'url-loader?limit=512'
+      loader: 'babel-loader'
+    }, {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    }, {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ]
     }]
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   plugins: [
-    new uglifyJsPlugin({compress: {warnings: false}}),
-    new definePlugin({'process.env': {NODE_ENV: '"production"'}})
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    // new webpack.optimize.UglifyJsPlugin()
   ]
 };

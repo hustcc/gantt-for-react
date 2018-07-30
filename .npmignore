@@ -1,0 +1,13 @@
+node_modules
+coverage
+__tests__
+site
+doc
+demo
+npm-debug.*
+.idea
+.gitignore
+.travis.yml
+.babelrc
+index.html
+webpack.config.js
