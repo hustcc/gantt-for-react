@@ -3,9 +3,9 @@
 > [Frappe Gantt](https://github.com/frappe/gantt) components for React wrapper.
 
 [![Build Status](https://travis-ci.org/hustcc/gantt-for-react.svg?branch=master)](https://travis-ci.org/hustcc/gantt-for-react)
-[![npm](https://img.shields.io/npm/v/gantt-for-react.svg?style=flat-square)](https://www.npmjs.com/package/gantt-for-react)
-[![npm](https://img.shields.io/npm/dt/gantt-for-react.svg?style=flat-square)](https://www.npmjs.com/package/gantt-for-react)
-[![npm](https://img.shields.io/npm/l/gantt-for-react.svg?style=flat-square)](https://www.npmjs.com/package/gantt-for-react)
+[![npm](https://img.shields.io/npm/v/gantt-for-react.svg)](https://www.npmjs.com/package/gantt-for-react)
+[![npm](https://img.shields.io/npm/dt/gantt-for-react.svg)](https://www.npmjs.com/package/gantt-for-react)
+[![npm](https://img.shields.io/npm/l/gantt-for-react.svg)](https://www.npmjs.com/package/gantt-for-react)
 
 
 # 1. Install
@@ -19,19 +19,19 @@ npm install --save gantt-for-react
 
 Online demo see [https://git.hust.cc/gantt-for-react/](https://git.hust.cc/gantt-for-react/).
 
-```js
+```jsx
 import React from 'react';
 import ReactGantt from 'gantt-for-react';
 
 <ReactGantt
-	tasks={this.getTasks()}
-	viewMode={this.state.viewMode}
-
-    onClick={this._func}
-	onDateChange={this._func}
-	onProgressChange={this._func}
-	onViewChange={this._func}
-	customPopupHtml={this._html_func} />
+  tasks={this.getTasks()}
+  viewMode={this.state.viewMode}
+  onClick={this._func}
+  onDateChange={this._func}
+  onProgressChange={this._func}
+  onViewChange={this._func}
+  customPopupHtml={this._html_func}
+/>
 ```
 
 Or you can see the code [here](https://github.com/hustcc/gantt-for-react/blob/master/demo/GanttComponent.jsx#L51).
