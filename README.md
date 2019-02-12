@@ -1,6 +1,6 @@
 # gantt-for-react
 
-> [Frappe Gantt](https://github.com/frappe/gantt) components for React wrapper.
+> [Frappe Gantt](https://github.com/frappe/gantt) component for React wrapper.
 
 [![Build Status](https://travis-ci.org/hustcc/gantt-for-react.svg?branch=master)](https://travis-ci.org/hustcc/gantt-for-react)
 [![npm](https://img.shields.io/npm/v/gantt-for-react.svg)](https://www.npmjs.com/package/gantt-for-react)
@@ -34,7 +34,7 @@ import ReactGantt from 'gantt-for-react';
 />
 ```
 
-Or you can see the code [here](https://github.com/hustcc/gantt-for-react/blob/master/demo/GanttComponent.jsx#L51).
+Or you can see the code [here](demo/Gantt.jsx#L74).
 
 
 # 3. Component props
