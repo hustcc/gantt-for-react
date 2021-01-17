@@ -4,19 +4,20 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var definePlugin = webpack.DefinePlugin;
 
 module.exports = {
+  mode: "production",
   entry: './demo/index.jsx',
   output: {
     path: path.resolve(__dirname, './demo/dist'),
     filename: 'bundle.js'
   },
   module: {
-    loaders:[{
+    rules:[{
       test: /\.js[x]?$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      use: ['style-loader', 'css-loader'],
     }, {
       test: /\.scss$/,
       use: [
