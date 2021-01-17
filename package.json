@@ -6,9 +6,9 @@
   "scripts": {
     "clean": "rimraf lib && rimraf demo/dist",
     "precommit": "npm run build",
-    "start": "webpack-dev-server --watch",
+    "start": "webpack serve --config webpack.config.js",
     "demo": "webpack",
-    "dev": "webpack --watch",
+    "dev": "webpack --config webpack.config.js",
     "build": "npm run clean && cross-env NODE_ENV=production babel src -d lib && npm run demo"
   },
   "repository": {
@@ -35,34 +35,34 @@
   },
   "homepage": "https://github.com/hustcc/gantt-for-react",
   "dependencies": {
-    "frappe-gantt": "^0.2.0",
-    "size-sensor": "^0.2.0"
+    "frappe-gantt": "^0.5.0",
+    "size-sensor": "^1.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "cross-env": "^5.1.5",
-    "css-loader": "^0.28.7",
-    "husky": "^0.14.3",
-    "node-sass": "^4.9.2",
-    "react": "^16.0.0",
-    "react-adsense": "^0.0.6",
-    "react-dom": "^16.0.0",
-    "rimraf": "^2.6.2",
-    "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-transform-react-jsx": "^7.12.12",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.1",
+    "husky": "^4.3.8",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.2"
   },
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
